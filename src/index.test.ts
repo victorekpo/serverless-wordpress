@@ -1,19 +1,15 @@
 import { Template } from 'aws-cdk-lib/assertions';
 import * as CDK from 'aws-cdk-lib';
-import { MusicAppApiStack, MusicAppFnsStack } from './index';
+import { ServerlessWordpressStack } from './index';
 
-let templateApi: Template;
-let templateFns: Template;
+let template: Template;
 
 describe('CDK Stack', () => {
   beforeAll(() => {
     const app = new CDK.App();
-    const apiStack = new MusicAppApiStack(app, 'MyTestStack-API');
-    const fnsStack = new MusicAppFnsStack(app, 'MyTestStack-Fns');
-    templateApi = Template.fromStack(apiStack);
-    templateFns = Template.fromStack(fnsStack);
-    console.log('Template', JSON.stringify(templateApi, null, 2));
-    console.log('Template', JSON.stringify(templateFns, null, 2));
+    const stack = new ServerlessWordpressStack(app, 'MyTestStack-API');
+    template = Template.fromStack(stack);
+    console.log('Template', JSON.stringify(template, null, 2));
   });
 
   test('API Gateway Proxy Created', () => {
