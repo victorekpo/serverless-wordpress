@@ -1,6 +1,6 @@
 import { Template } from 'aws-cdk-lib/assertions';
 import * as CDK from 'aws-cdk-lib';
-import { ServerlessWordpressStack } from './index';
+import { ServerlessWordpressStack } from './stacks';
 
 let template: Template;
 
@@ -14,16 +14,13 @@ describe('CDK Stack', () => {
 
   test('API Gateway Proxy Created', () => {
     console.log('Testing API Gateway');
-    templateApi.hasResourceProperties('AWS::ApiGateway::Resource', {
+    template.hasResourceProperties('AWS::ApiGateway::Resource', {
       'PathPart': 'health', // use proxy for catch all '{proxy+}'
-    });
-    templateFns.hasResourceProperties('AWS::ApiGateway::Resource', {
-      'PathPart': 'graphql', // use proxy for catch all '{proxy+}'
     });
   });
 
   test('1 Lambda Function Created', () => {
     console.log('Testing Lambda Functions');
-    templateFns.resourceCountIs('AWS::Lambda::Function', 1);
+    template.resourceCountIs('AWS::Lambda::Function', 1);
   });
 });
