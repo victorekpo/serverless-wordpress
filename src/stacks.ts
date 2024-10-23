@@ -26,7 +26,7 @@ export class ServerlessWordpressStack extends CDK.Stack {
     const wordpressFunction = new lambda.Function(this, 'WordpressFunction', {
       runtime: lambda.Runtime.PROVIDED_AL2, // Custom runtime provided by Bref
       handler: 'index.php',
-      code: lambda.Code.fromAsset('src/functions/wordpress/wp'), // Folder where PHP/WordPress code resides
+      code: lambda.Code.fromAsset('src/functions/wordpress'), // Folder where PHP/WordPress code resides
       layers: [brefPhpLayer],
       memorySize: 1024, // Adjust memory as necessary
       timeout: CDK.Duration.seconds(30),
