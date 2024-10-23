@@ -11,9 +11,16 @@ use Bref\Runtime\LambdaRuntime;
 LambdaRuntime::fromEnvironmentVariable('LAMBDA_TASK_ROOT')
     ->start(function (HttpRequestEvent $event, Context $context): HttpResponse {
         ob_start();
-        // Execute WordPress
-        wp();
-        $output = ob_get_clean();
-
-        return new HttpResponse($output);
+        try {
+            // Execute WordPress
+            wp();
+            $output = ob_get_clean();
+            return new HttpResponse($output);
+        } catch (\Throwable $e) {
+            // Log any errors
+            error_log($e->getMessage());
+            return new HttpResponse('Error executing WordPress', 500);
+        }
     });
+
+?>

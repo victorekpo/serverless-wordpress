@@ -53,4 +53,5 @@ export class ServerlessWordpressStack extends CDK.Stack {
     // Optional: Add permissions for logging
     wordpressFunction.role?.addManagedPolicy(ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'));
   }
+
 }
