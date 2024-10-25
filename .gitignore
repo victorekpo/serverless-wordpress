@@ -6,5 +6,3 @@ local.js
 package-lock.json
 cdk.out/
 .aws-sam/
-vendor/
-wp/

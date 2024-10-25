@@ -1,0 +1,56 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => 'd88999edc677e07eb598b47655a82370c12555a3',
+        'name' => '__root__',
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => 'd88999edc677e07eb598b47655a82370c12555a3',
+            'dev_requirement' => false,
+        ),
+        'johnpbloch/wordpress' => array(
+            'pretty_version' => '6.6.2',
+            'version' => '6.6.2.0',
+            'type' => 'package',
+            'install_path' => __DIR__ . '/../johnpbloch/wordpress',
+            'aliases' => array(),
+            'reference' => '1bd4fb6bbee375a3428e2aa3593ee2549974b0c1',
+            'dev_requirement' => false,
+        ),
+        'johnpbloch/wordpress-core' => array(
+            'pretty_version' => '6.6.2',
+            'version' => '6.6.2.0',
+            'type' => 'wordpress-core',
+            'install_path' => __DIR__ . '/../../wp',
+            'aliases' => array(),
+            'reference' => 'dbb5f96e78905e26cbfb4c4796d9d5b92c451a81',
+            'dev_requirement' => false,
+        ),
+        'johnpbloch/wordpress-core-installer' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../johnpbloch/wordpress-core-installer',
+            'aliases' => array(),
+            'reference' => '237faae9a60a4a2e1d45dce1a5836ffa616de63e',
+            'dev_requirement' => false,
+        ),
+        'wordpress/core-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '6.6.2',
+            ),
+        ),
+    ),
+);
