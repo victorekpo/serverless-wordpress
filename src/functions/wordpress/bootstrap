@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Print startup message to stdout
+exec > >(tee -i /dev/stdout) 2>&1
+echo "Starting PHP built-in server for WordPress..."
+
+# This line is necessary to tell AWS Lambda to execute this file
+# as the entry point of your Lambda function.
+# It should be executable, make sure to run `chmod +x bootstrap`.
+
+# Start the PHP runtime and load your application
+# In this case, it assumes you have an index.php or similar
+# file to handle the incoming requests.
+# Set the document root to the 'wp' directory where WordPress files are located
+
+# Note: Make sure to update this line according to your app structure.
+php -S 0.0.0.0:9000 -t wp > /dev/null 2>&1 &
+wait
+
+# Print a message to stdout before exiting
+echo "PHP server is running on port 9000."

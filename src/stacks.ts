@@ -29,7 +29,7 @@ export class ServerlessWordpressStack extends CDK.Stack {
       code: lambda.Code.fromAsset('src/functions/wordpress'), // Folder where PHP/WordPress code resides
       layers: [brefPhpLayer],
       memorySize: 1024, // Adjust memory as necessary
-      timeout: CDK.Duration.seconds(30),
+      timeout: CDK.Duration.seconds(120), // Increase the timeout here
       environment: {
         WP_HOME: 'https://yourdomain.com',
         WP_SITEURL: 'https://yourdomain.com',

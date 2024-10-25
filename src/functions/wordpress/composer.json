@@ -1,0 +1,23 @@
+{
+    "require": {
+        "johnpbloch/wordpress": "^6.3",
+        "bref/bref": "^2.0"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp",
+        "bref": {
+            "extra-php-extensions": [
+                "redis",
+                "gd",
+                "zip",
+                "fileinfo",
+                "soap"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true
+        }
+    }
+}
