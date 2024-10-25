@@ -19,7 +19,7 @@ export class ServerlessWordpressStack extends CDK.Stack {
     const brefPhpLayer = lambda.LayerVersion.fromLayerVersionArn(
       this,
       'BrefPhpLayer',
-      'arn:aws:lambda:YOUR_REGION:209497400698:layer:php-80-fpm:8'
+      'arn:aws:lambda:us-east-1:209497400698:layer:php-80-fpm:8'
     );
 
     // Lambda function running WordPress (PHP via Bref)

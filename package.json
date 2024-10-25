@@ -1,5 +1,5 @@
 {
-  "name": "serverless-music-app",
+  "name": "serverless-wordpress",
   "version": "1.0.0",
   "bin": {
     "index": "src/index.js"

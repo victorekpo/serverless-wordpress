@@ -1,5 +1,5 @@
 import * as CDK from 'aws-cdk-lib';
-import { ServerlessWordpressStack } from "@/stacks";
+import { ServerlessWordpressStack } from "./stacks";
 
 const app = new CDK.App();
 

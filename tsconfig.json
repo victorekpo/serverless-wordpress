@@ -29,16 +29,13 @@
       "./node_modules/@types"
     ],
     "outDir": "dist",
-    "allowSyntheticDefaultImports": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "dist",
     "node_modules",
-    "cdk.out"
+    "cdk.out",
+    "vendor",
+    "wp"
   ]
 }
