@@ -1,0 +1,13 @@
+{
+    "require": {
+        "johnpbloch/wordpress": "^6.3"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp"
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true
+        }
+    }
+}
